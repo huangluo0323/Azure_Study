@@ -20,7 +20,7 @@ jobs:
       # create a new workspace
     - name: Create Workspace
       id: aml_workspace
-      uses: ./
+      uses: Azure/aml-workspace@v1
       with:
         azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
         parameters_file: "workspace.json"
