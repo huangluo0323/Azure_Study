@@ -5,8 +5,8 @@ on:
   push:
     branches:
       - master
-    # paths:
-    #   - 'code/*'
+    paths:
+      - 'code/*'
 
 jobs:
   train:
@@ -19,28 +19,28 @@ jobs:
         
     # Connect or Create the Azure Machine Learning Workspace
     - name: Connect/Create Azure Machine Learning Workspace
-      id: aml_workspace
+      id: aml-workspace
       uses: Azure/aml-workspace@v1
       with:
           azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
     
     # Connect or Create a Compute Target in Azure Machine Learning
     - name: Connect/Create Azure Machine Learning Compute Target
-      id: aml_compute_training
+      id: aml-compute_training
       uses: Azure/aml-compute@v1
       with:
           azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
     
     # Submit a training run to the Azure Machine Learning
     - name: Submit training run
-      id: aml_run
+      id: aml-run
       uses: Azure/aml-run@v1
       with:
           azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
 
     # Register model in Azure Machine Learning model registry
     - name: Register model
-      id: aml_registermodel
+      id: aml-registermodel
       uses: Azure/aml-registermodel@v1
       with:
           azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
@@ -49,7 +49,7 @@ jobs:
 
     # Deploy model in Azure Machine Learning to ACI
     - name: Deploy model
-      id: aml_deploy
+      id: aml-deploy
       uses: Azure/aml-deploy@v1
       with:
           azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
