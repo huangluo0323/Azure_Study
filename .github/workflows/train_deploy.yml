@@ -20,9 +20,9 @@ jobs:
       # create a new workspace
     - name: Create Workspace
       id: aml_workspace
-      uses: azure/aml-workspace@v1
-      with:
-        azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
+      uses: Azure/aml-workspace@v1
+#       with:
+#         azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
         
 #     # Connect or Create the Azure Machine Learning Workspace
 #     - name: Connect/Create Azure Machine Learning Workspace
