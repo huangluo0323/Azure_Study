@@ -22,7 +22,7 @@ jobs:
       id: aml_workspace
       uses: Azure/aml-workspace@v1
       with:
-        azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
+        azure_credentials: ${{ Secrets.AZURE_CREDENTIALS }}
         parameters_file: "workspace.json"
         
 #     # Connect or Create the Azure Machine Learning Workspace
