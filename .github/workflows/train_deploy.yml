@@ -17,6 +17,23 @@ jobs:
       id: checkout_repository
       uses: actions/checkout@v2
         
+      # create a new workspace
+    - name: Create Workspace
+      id: ws_create
+      uses: ./
+      with:
+        azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
+        parameters_file: "test/test_workspace.json"
+
+      # connect to above created workspace
+    - name: Connect Workspace
+      if: steps.ws_create.outputs.status == 'success'
+      id: ws_connect
+      uses: ./
+      with:
+        azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
+        parameters_file: "test/test_workspace.json"
+        
 #     # Connect or Create the Azure Machine Learning Workspace
 #     - name: Connect/Create Azure Machine Learning Workspace
 #       id: aml_workspace
