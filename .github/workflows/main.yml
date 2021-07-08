@@ -15,13 +15,6 @@ jobs:
       id: checkout_repository
       uses: actions/checkout@v2
         
-#       # create a new workspace
-#     - name: Create Workspace
-#       id: aml_workspace
-#       uses: Azure/aml-workspace@v1
-#       with:
-#         azure_credentials: ${{ secrets.BBB }}
-        
     # Connect or Create the Azure Machine Learning Workspace
     - name: Connect/Create Azure Machine Learning Workspace
       id: aml_workspace
