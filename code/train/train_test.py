@@ -22,7 +22,7 @@ args = parser.parse_args()
 # args:Namespace(kernel='rbf', penalty=1.0)
 
 # 创建输出文件夹
-os.makedirs("./outputs", exist_ok=True)
+os.makedirs("outputs", exist_ok=True)
 
 # 参数日志
 run = Run.get_context()
