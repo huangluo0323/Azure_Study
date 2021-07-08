@@ -1,6 +1,6 @@
 name: train model
 # The script to run.
-script: train.py
+script: train_test.py
 # The arguments to the script file.
 arguments: [
   "--kernel", "linear",
