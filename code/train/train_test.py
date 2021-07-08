@@ -96,3 +96,25 @@ plt.xlabel("Predicted label")
 plt.tight_layout()
 run.log_image("Normalized_confusion_matrix", plot=plt)
 plt.savefig(os.path.join("outputs","{0}.png".format("Normalized_confusion_matrix")))
+
+print('-------------分割线--------------')
+# 混淆矩阵
+print("混淆矩阵图")
+plt.figure()
+plt.imshow(cm, interpolation="nearest", cmap=plt.cm.Blues)
+plt.title("confusion_matrix")
+plt.colorbar()
+tick_marks = np.arange(len(labels))
+plt.xticks(tick_marks, labels, rotation=45)
+plt.yticks(tick_marks, labels)
+
+thresh = cm.max() / 2.
+
+for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
+    plt.text(j, i, cm[i, j], horizontalalignment="center", color="white" if cm[i, j] > thresh else "black")
+
+plt.ylabel("True label")
+plt.xlabel("Predicted label")
+plt.tight_layout()
+run.log_image("confusion_matrix", plot=plt)
+plt.savefig(os.path.join("outputs","{0}.png".format("confusion_matrix")))
