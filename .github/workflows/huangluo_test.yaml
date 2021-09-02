@@ -11,6 +11,6 @@ jobs:
   printInputs:
     runs-on: ubuntu-latest
     steps:
-    - run: 
+    - run: |
         echo "logLevel: ${{ github.event.inputs.logLevel }}"
         echo "Tags: ${{ github.event.inputs.tags }}"
