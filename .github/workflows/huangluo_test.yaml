@@ -13,5 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "logLevel: ${{ github.event.inputs.logLevel }}" >test.txt
-        echo "Tags: ${{ github.event.inputs.tags }}">test1.txt
+        echo "logLevel: ${{ github.event.inputs.logLevel }}"
+        echo "Tags: ${{ github.event.inputs.tags }}"
+        echo . test.py
