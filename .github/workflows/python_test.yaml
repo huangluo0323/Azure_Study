@@ -3,6 +3,7 @@ on:
 
 jobs:
   example-job:
+    runs-on: ubuntu-latest
     steps:
       - name: Run build script
         run: ./.github/workflows/test.py
