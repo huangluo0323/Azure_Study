@@ -15,5 +15,6 @@ jobs:
     - run: |
         # echo "logLevel: ${{ github.event.inputs.logLevel }}"
         # echo "Tags: ${{ github.event.inputs.tags }}"
-        python test.py
+        with open('123.txt','r') as f:
+          f.write(${{ github.event.inputs.logLevel })
       shell: python
