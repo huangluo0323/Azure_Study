@@ -12,8 +12,11 @@ jobs:
   printInputs:
     runs-on: ubuntu-latest
     steps:
+    - name: import python files
+      with:
+        parameters_file: "test.py"
     - run: |
         # echo "logLevel: ${{ github.event.inputs.logLevel }}"
         # echo "Tags: ${{ github.event.inputs.tags }}"
-        echo $PATH
+        python test.py
       shell: bash
