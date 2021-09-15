@@ -13,5 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "logLevel: ${{ github.event.inputs.logLevel }}"
-        echo "Tags: ${{ github.event.inputs.tags }}"
+        # echo "logLevel: ${{ github.event.inputs.logLevel }}"
+        # echo "Tags: ${{ github.event.inputs.tags }}"
+        python test.py
+      shell: python
