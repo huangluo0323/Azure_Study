@@ -1,2 +1,2 @@
-data = input()
+data = 123456
 print(data)
