@@ -1,2 +1,2 @@
-data = 123456
+data = "成功"
 print(data)
