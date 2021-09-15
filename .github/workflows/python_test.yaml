@@ -5,6 +5,4 @@ jobs:
   example-job:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          print(${{ github.action_path }})
-        shell: python
+      - run: python test.py
