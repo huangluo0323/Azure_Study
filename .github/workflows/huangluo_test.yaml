@@ -12,13 +12,6 @@ jobs:
   printInputs:
     runs-on: ubuntu-latest
     steps:
-    - name: import python files
-      uses: actions/setup-python@v2
-      with:
-        parameters_file: "test.py"
-    - name: run
-      run: |
-        # echo "logLevel: ${{ github.event.inputs.logLevel }}"
-        # echo "Tags: ${{ github.event.inputs.tags }}"
-        python test.py
-      shell: bash
+      - run: |
+          echo "logLevel: ${{ github.event.inputs.logLevel }}"
+          echo "Tags: ${{ github.event.inputs.tags }}"
