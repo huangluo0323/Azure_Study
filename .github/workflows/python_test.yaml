@@ -5,6 +5,8 @@ jobs:
   example-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Run build script
-        run: ./.github/workflows/test.py
-        shell: bash
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.7'
+        architecture: 'x64'
+      run: python test.py
