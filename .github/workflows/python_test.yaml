@@ -5,8 +5,4 @@ jobs:
   example-job:
     runs-on: ubuntu-latest
     steps:
-      - with:
-          path: .github/workflows/test.py
-      - run: |
-          python test.py
-        shell: bash
+      - run: ./test.py
