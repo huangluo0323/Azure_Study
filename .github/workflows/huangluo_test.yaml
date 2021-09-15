@@ -15,7 +15,8 @@ jobs:
     - name: import python files
       with:
         parameters_file: "test.py"
-    - run: |
+    - name: run
+      run: |
         # echo "logLevel: ${{ github.event.inputs.logLevel }}"
         # echo "Tags: ${{ github.event.inputs.tags }}"
         python test.py
