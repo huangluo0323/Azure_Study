@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: import python files
+      uses: actions/setup-python@v2
       with:
         parameters_file: "test.py"
     - name: run
