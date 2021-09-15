@@ -15,5 +15,5 @@ jobs:
     - run: |
         # echo "logLevel: ${{ github.event.inputs.logLevel }}"
         # echo "Tags: ${{ github.event.inputs.tags }}"
-        print('123456789+')
-      shell: python
+        python test.py
+      shell: bash
