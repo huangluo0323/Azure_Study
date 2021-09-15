@@ -9,4 +9,4 @@ jobs:
       with:
         python-version: '3.7'
         architecture: 'x64'
-      run: python test.py
+    - run: python test.py
