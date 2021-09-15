@@ -1,0 +1,9 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  example-job:
+    steps:
+      - name: Run build script
+        run: ./.github/workflows/test.py
+        shell: bash
