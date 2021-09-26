@@ -4,10 +4,10 @@ on:
   push:
     branches:
       - master
-      - slave
+      - slave1
 jobs:
   test_qa:
-    if: ${{ github.ref == 'refs/heads/slave' }}
+    if: ${{ github.ref == 'refs/heads/slave1' }}
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
