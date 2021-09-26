@@ -11,9 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: Check Out Repository
+        id: checkout_repository
+        uses: actions/checkout@v2
       - run: echo "Test qa"
 
   deployment_test_prd:
     if: ${{ github.ref == 'refs/heads/master' }}
     runs-on: ubuntu-latest
+      - name: Check Out Repository
+        id: checkout_repository
+        uses: actions/checkout@v2
       - run: echo "Test prd"
