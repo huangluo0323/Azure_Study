@@ -1,25 +1,26 @@
-name: Huangluo Test
+name: Code Change Pipeline CI
 
 on:
   push:
     branches:
       - master
-      - slave1
+    #paths: 
+    #   - '.github/workflows/train_model.yml' 
+    #   - 'code/**' 
+
 jobs:
-  test_qa:
-    if: ${{ github.ref == 'refs/heads/slave1' }}
+  deployment:
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    # Checks-out repository
       - name: Check Out Repository
         id: checkout_repository
         uses: actions/checkout@v2
-      - run: echo "Test qa"
 
-  deployment_test_prd:
-    if: ${{ github.ref == 'refs/heads/master' }}
-    runs-on: ubuntu-latest
-      - name: Check Out Repository
-        id: checkout_repository
-        uses: actions/checkout@v2
-      - run: echo "Test prd"
+    # Connect the Azure Machine Learning Workspace
+      - name: Connect Azure Machine Learning Workspace
+        id: aml_workspace
+        uses: Azure/aml-workspace@v1
+        with:
+            azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
